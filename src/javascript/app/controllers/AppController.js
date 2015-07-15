@@ -7,6 +7,7 @@
         // Views
         GlobalView = require('views/GlobalView.js'),
         BaseView = require('views/BaseView.js');
+        TodoListView = require('views/ToDoListView.js');
 
     module.exports = Backbone.Marionette.Controller.extend({
 
@@ -45,7 +46,8 @@
         =========================================== */
 
         index: function() {
-            console.log('AppController > index()');
+            var toDoListView = new TodoListView();
+            app.mainRegion.show(toDoListView);
         },
 
         home: function() {

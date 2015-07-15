@@ -6,12 +6,6 @@ module.exports = Marionette.ItemView.extend({
 
     onShow: function() {
         this.delegateEvents();
-    },
-
-    templateHelpers: function() {
-        return {
-            'staticUrl': window.config.staticUrl
-        };
     }
 
 });
