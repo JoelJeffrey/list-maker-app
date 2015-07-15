@@ -1,8 +1,8 @@
-var BaseView = require('views/BaseView.js');
+var Marionette = require('backbone.marionette');
 var template = require('templates/todo-list.hbs');
 var Backbone = require('backbone');
 
-module.exports = BaseView.extend({
+module.exports = Marionette.LayoutView.extend({
 
 	template: template,
 
@@ -40,7 +40,6 @@ module.exports = BaseView.extend({
     	this.todoCollection.add(todoModel);
 
     	console.log(this.todoCollection);
-
     }
 
 });
