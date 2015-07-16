@@ -1,10 +1,15 @@
 var Marionette = require('backbone.marionette');
 var template = require('templates/todo-list.hbs');
+var TodosView = require('views/TodosView');
 var Backbone = require('backbone');
 
 module.exports = Marionette.LayoutView.extend({
 
 	template: template,
+
+    regions: {
+        todosRegion: '#region-todos'
+    },
 
 	ui: {
 		form: 'form',
@@ -39,7 +44,14 @@ module.exports = Marionette.LayoutView.extend({
 
     	this.todoCollection.add(todoModel);
 
-    	console.log(this.todoCollection);
+        this.showTodos();
+    },
+
+    showTodos: function() {
+        this.collectionView = new TodosView({
+            collection: this.todoCollection
+        });
+        this.todosRegion.show(this.collectionView);
     }
 
 });

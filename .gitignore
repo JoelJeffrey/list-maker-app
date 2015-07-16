@@ -113,5 +113,9 @@ uploads/*
 !collected-static/.gitkeep
 !uploads/README
 
+<<<<<<< HEAD
 routing.js
 
+=======
+routing.js
+>>>>>>> chicken
